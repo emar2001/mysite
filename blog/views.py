@@ -10,7 +10,7 @@ def blog_single(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.counted_views += 1
     post.save()
-    context = {'post':Post, 'pk':pk}
+    context = {'post':post, 'pk':pk}
     return render(request, 'blog/blog-single.html', context)
 
 def test(request,pid):
